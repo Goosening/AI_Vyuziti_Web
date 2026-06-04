@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technická Dokumentace - AI Insights</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .doc-section {
+            background: var(--clr-bg-surface);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .doc-section h2 {
+            color: var(--clr-text-main);
+            border-bottom: 1px solid var(--clr-border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .doc-section h3 {
+            color: var(--clr-primary-400);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        code {
+            background-color: var(--clr-bg-card);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--clr-primary-400);
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar" aria-label="Hlavní navigace">
+        <div class="logo-text">AI.</div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-link">Úvod</a>
+            <a href="proc-ai.html" class="nav-link">Proč AI</a>
+            <a href="vyuziti.html" class="nav-link">Využití</a>
+            <a href="zkusenost.html" class="nav-link">Zkušenost</a>
+            <a href="dokumentace.html" class="nav-link active">Dokumentace</a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <main id="main-content">
+            <section class="section">
+                <div class="container">
+                    <h1 class="page-title">Technická<br>dokumentace</h1>
+                    <p class="page-subtitle" style="margin-bottom: 3rem;">Detailní popis použitých technologií, architektury a optimalizačních postupů aplikovaných při vývoji webu.</p>
+
+                    <section class="doc-section">
+                        <h2>1. Architektura a Technické specifikace</h2>
+                        <p>Projekt byl realizován pomocí <strong>čistého HTML5, CSS3 a Vanilla JavaScriptu (ES6+)</strong> bez frameworků.</p>
+                        <ul>
+                            <li><strong>Vícestránková architektura (MPA):</strong> Web je rozdělen do více HTML souborů, což umožňuje čistší organizaci obsahu a přesnější zacílení klíčových slov pro SEO na konkrétních podstránkách.</li>
+                            <li><strong>Rozložení (Layout):</strong> Využit moderní přístup CSS Flexbox pro "Sidebar" navigaci a CSS Grid pro mřížku karet (např. sekce Proč AI). Tento designový vzor je čistý a efektivně odděluje navigaci od obsahu.</li>
+                            <li><strong>JavaScript:</strong> Napsán v moderním formátu ES6+. Stará se o to, že analyzuje aktuální URL adresu (<code>window.location.pathname</code>) a podle toho dynamicky přiřazuje třídu <code>.active</code> správnému odkazu v postranním menu.</li>
+                        </ul>
+                    </section>
+
+                    <section class="doc-section">
+                        <h2>2. Oblasti optimalizace</h2>
+                        
+                        <h3>Výkon (Performance)</h3>
+                        <ul>
+                            <li><strong>Minimalizace HTTP požadavků:</strong> Místo importování externích webfontů (např. Google Fonts) jsou využity moderní systémové fonty. Toto řešení zamezuje stahování dalších souborů a text je vykreslen okamžitě bez tzv. FOUT (Flash of Unstyled Text).</li>
+                            <li><strong>Asynchronní načítání:</strong> JavaScript je načítán s atributem <code>defer</code>, takže neblokuje prvotní renderování HTML dokumentu.</li>
+                            <li><strong>Žádný zbytečný kód:</strong> CSS soubor má minimum pravidel a kód je připraven pro bezproblémovou minifikaci v produkci.</li>
+                        </ul>
+
+                        <h3>SEO (Optimalizace pro vyhledávače)</h3>
+                        <ul>
+                            <li><strong>Sémantika:</strong> Web používá sémantické tagy HTML5 (<code>&lt;aside&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>) pro dokonalé pochopení struktury vyhledávacími roboty.</li>
+                            <li><strong>Sitemap a Robots.txt:</strong> Součástí struktury projektu je <code>sitemap.xml</code> udržující přehled všech podstránek a <code>robots.txt</code>.</li>
+                        </ul>
+
+                        <h3>Přístupnost (Accessibility - A11y)</h3>
+                        <ul>
+                            <li><strong>Barevný kontrast v Dark Mode:</strong> Hluboké modré pozadí a téměř bílý text byly zvoleny tak, aby splňovaly nejpřísnější standardy čitelnosti WCAG, přičemž jsou velmi příjemné na oči (zamezují tzv. eye-strain).</li>
+                            <li><strong>Sémantická navigace:</strong> Navigační prvek používá atribut <code>aria-label="Hlavní navigace"</code>.</li>
+                        </ul>
+
+                        <h3>UI/UX a Responzivita</h3>
+                        <ul>
+                            <li><strong>Mobile First a plynulý přechod:</strong> Kód plynule přeskupuje postranní panel (Sidebar) do horní nebo spodní lišty na menších obrazovkách pomocí <code>@media</code> queries, aniž by byl potřeba složitý JavaScript pro "hamburger" menu.</li>
+                            <li><strong>Design:</strong> Tmavé téma (Dark theme) a minimalistická typografie dávají webu vzhled profesionální technologické dokumentace či portfolia.</li>
+                        </ul>
+                    </section>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; 2024 AI Insights.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+/* ==========================================================================
+   Základní nastavení a Proměnné (Variables)
+   ========================================================================== */
+:root {
+    --clr-bg: #090e17;
+    --clr-bg-surface: #0f172a;
+    --clr-bg-card: #1e293b;
+    
+    --clr-primary-400: #38bdf8;
+    --clr-primary-500: #0ea5e9;
+    --clr-primary-700: #0369a1;
+    
+    --clr-text-main: #f8fafc;
+    --clr-text-muted: #94a3b8;
+    --clr-border: #1e293b;
+    
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    
+    --sidebar-width: 280px;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 6rem;
+    --border-radius: 4px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    color: var(--clr-text-main);
+    background-color: var(--clr-bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--clr-primary-400);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover, a:focus {
+    color: var(--clr-primary-500);
+    text-decoration: underline;
+}
+
+ul { list-style: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+.skip-link { position: absolute; top: -40px; left: 0; background: var(--clr-primary-500); color: white; padding: 8px; z-index: 100; }
+.skip-link:focus { top: 0; }
+
+/* ==========================================================================
+   Sidebar Layout
+   ========================================================================== */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 1px solid var(--clr-border);
+    background-color: var(--clr-bg);
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    z-index: 50;
+}
+
+.sidebar .logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--clr-text-main);
+    margin-bottom: var(--spacing-xl);
+    letter-spacing: -1px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.sidebar-nav a {
+    color: var(--clr-text-muted);
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    color: var(--clr-text-main);
+}
+
+.main-wrapper {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Plynulý přechod celého obsahu stránky (Page Transition) */
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.main-wrapper.page-enter-active {
+    opacity: 1;
+}
+
+.main-wrapper.page-leave-active {
+    opacity: 0;
+}
+
+/* ==========================================================================
+   Obsah a Typografie
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: var(--spacing-lg);
+}
+
+.hero {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+}
+
+#hero-title, .page-title {
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--spacing-md);
+    color: var(--clr-text-main);
+    font-weight: 700;
+}
+
+.hero-subtitle, .page-subtitle {
+    font-size: 1.25rem;
+    color: var(--clr-text-muted);
+    max-width: 600px;
+}
+
+.section {
+    padding: var(--spacing-lg) 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--clr-text-main);
+}
+
+/* Karty */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.card {
+    background: var(--clr-bg-card);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--clr-border);
+}
+
+.card h3 {
+    color: var(--clr-text-main);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.25rem;
+}
+
+.card p {
+    color: var(--clr-text-muted);
+    font-size: 0.95rem;
+}
+
+/* Seznamy */
+.feature-list li {
+    margin-bottom: var(--spacing-md);
+    color: var(--clr-text-muted);
+    border-left: 2px solid var(--clr-border);
+    padding-left: 1rem;
+}
+
+.feature-list strong {
+    color: var(--clr-text-main);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Osobní zkušenost */
+.placeholder-box {
+    background-color: var(--clr-bg-surface);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--clr-border);
+}
+
+.placeholder-box p {
+    margin-bottom: var(--spacing-md);
+    color: var(--clr-text-muted);
+}
+
+.placeholder-box .lead {
+    font-size: 1.15rem;
+    color: var(--clr-text-main);
+}
+
+/* Tlačítka */
+.btn-primary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--clr-primary-500);
+    color: white;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    margin-top: var(--spacing-md);
+}
+
+.btn-primary:hover {
+    background: var(--clr-primary-400);
+    text-decoration: none;
+}
+
+/* Patička */
+.site-footer {
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--clr-border);
+    color: var(--clr-text-muted);
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Responzivita (Mobil)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--clr-border);
+        padding: var(--spacing-md);
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .sidebar .logo-text {
+        margin-bottom: 0;
+        font-size: 1.5rem;
+    }
+    
+    .sidebar-nav {
+        flex-direction: row;
+        gap: var(--spacing-md);
+    }
+    
+    .sidebar-nav a {
+        font-size: 0.95rem;
+    }
+    
+    .main-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+    .sidebar-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* ==========================================================================
+   Animace a Navigační komponenty (Performance optimized)
+   ========================================================================== */
+
+/* Objevování prvků ze strany (Scroll reveal) */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform; /* Optimalizace pro renderování v prohlížeči */
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Zpoždění pro kaskádový efekt karet vedle sebe */
+.grid-3 .card:nth-child(1) { transition-delay: 0.1s; }
+.grid-3 .card:nth-child(2) { transition-delay: 0.2s; }
+.grid-3 .card:nth-child(3) { transition-delay: 0.3s; }
+
+/* Sekvenční navigace ("Další část") */
+.page-navigation {
+    margin-top: auto; 
+    padding: var(--spacing-lg) 0;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid var(--clr-border);
+}
+
+.btn-next {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 2rem;
+    background: transparent;
+    color: var(--clr-text-main);
+    border: 1px solid var(--clr-border);
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-next::after {
+    content: "→";
+    transition: transform 0.2s ease;
+}
+
+.btn-next:hover {
+    background: var(--clr-bg-card);
+    border-color: var(--clr-primary-500);
+    text-decoration: none;
+}
+
+.btn-next:hover::after {
+    transform: translateX(5px); /* Drobná mikro-interakce na hover */
+}
