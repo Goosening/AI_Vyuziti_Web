@@ -27,10 +27,6 @@
 
 ## 4. Technický rozbor
 
-Pro každou z šesti oblastí optimalizace obsahuje tento rozbor:
-- teoretický popis řešení
-- výstřižek kódu s komentářem, jak problém řeší
-
 ### Výkon
 Web používá co nejméně externích zdrojů.
 
@@ -129,8 +125,8 @@ Pak otevřete v prohlížeči: `http://localhost:8000`
 
 - Desktop verze: úvodní stránka se sidebar navigací.
 
-  ![Úvodní strana - desktop](images/screenshots/image-1.png)
+  <img src="images/screenshots/image-1.png" alt="Úvodní strana - desktop" width="500" style="max-width:100%;height:auto;">
 
 - Mobilní verze: postranní panel se mění na horní navigaci a obsah je čitelný na malých obrazovkách.
 
-  ![Mobilní verze - mobil](images/screenshots/image.png)
+  <img src="images/screenshots/image.png" alt="Mobilní verze - mobil" width="320" style="max-width:100%;height:auto;">
