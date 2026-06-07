@@ -128,13 +128,9 @@ Pak otevřete v prohlížeči: `http://localhost:8000`
 ## 7. Galerie
 
 - Desktop verze: úvodní stránka se sidebar navigací.
-    <picture>
-      <source type="image/webp" srcset="images/screenshots/image-1.webp">
-      <img src="images/screenshots/image-1.png" alt="Úvodní strana - desktop" width="600" style="max-width:100%;height:auto;" loading="lazy" decoding="async">
-    </picture>
+
+  ![Úvodní strana - desktop](images/screenshots/image-1.png)
 
 - Mobilní verze: postranní panel se mění na horní navigaci a obsah je čitelný na malých obrazovkách.
-    <picture>
-      <source type="image/webp" srcset="images/screenshots/image.webp">
-      <img src="images/screenshots/image.png" alt="Mobilní verze - mobil" width="360" style="max-width:100%;height:auto;" loading="lazy" decoding="async">
-    </picture>
+
+  ![Mobilní verze - mobil](images/screenshots/image.png)
