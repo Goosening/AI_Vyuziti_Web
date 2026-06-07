@@ -101,8 +101,9 @@ Při práci na projektu jsem použil AI jako asistenta pro:
 
 Pár použitých promptů:
 
-- „Napiš README pro web o umělé inteligenci v češtině podle struktury: úvod, technologie, struktura, technický rozbor, AI deník, instalace, galerie."
+- „Napiš README pomocí instrukcí v obrázku."
 - „Jaké jsou nejlepší praktiky pro přístupnost v jednoduchém HTML/CSS projektu?"
+- „Zkontroloval by jsi můj kód prosím?"
 
 ## 6. Instalace a spuštění
 
@@ -136,22 +137,3 @@ Pravidla a doporučení:
 - Desktop verze: úvodní stránka se sidebar navigací.
 - Mobilní verze: postranní panel se mění na horní navigaci a obsah je čitelný na malých obrazovkách.
 - Klíčové funkce: aktivní odkaz v navigaci, skip link, responsivní rozvržení, animace načítání obsahu.
-
-> Poznámka: Doporučuji do galerie přidat screenshoty za běhu v desktopu a mobilu z Chrome DevTools nebo z mobilního zařízení.
-
-### Co vyfotit v kódu
-
-Pokud chceš dodat screenshoty kódu, vyfoť tyto části:
-
-- `index.html` - hlavička se SEO/Open Graph meta tagy a `canonical` adresou.
-- `index.html` - struktura navigace a `skip-link` pro přístupnost.
-- `style.css` - responsivní část, např. `meta viewport`, `clamp()` a styly pro mobilní menu.
-- `script.js` - logika pro aktivní odkaz v navigaci a chování při `pageshow`/scrollu.
-- `dokumentace.html` - kus dokumentace, který ukazuje technický obsah projektu.
-
-Pro vložení do `README.md` můžeš použít Markdown syntax jako:
-
-```md
-![Desktop verze](images/screenshots/home-desktop.png)
-![Mobilní verze](images/screenshots/home-mobile.png)
-```
