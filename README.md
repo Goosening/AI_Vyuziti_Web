@@ -101,7 +101,6 @@ Při práci na projektu jsem použil AI jako asistenta pro:
 
 Pár použitých promptů:
 
-- „Napiš README pomocí instrukcí v obrázku."
 - „Jaké jsou nejlepší praktiky pro přístupnost v jednoduchém HTML/CSS projektu?"
 - „Zkontroloval by jsi můj kód prosím?"
 
